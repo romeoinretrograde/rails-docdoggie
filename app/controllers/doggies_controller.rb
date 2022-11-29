@@ -18,8 +18,8 @@ class DoggiesController < ApplicationController
 
   private
 
-  def pig_params
-    params.require(:dog).permit(:user_id, :petname)
+  def doggie_params
+    params.require(:doggie).permit(:user_id, :petname)
   end
 
 end

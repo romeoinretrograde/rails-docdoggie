@@ -1,0 +1,21 @@
+.image-background{
+  height: 300px;
+}
+
+.dashboard-header, h1, h3{
+  text-align: center;
+}
+
+.dashboard-items{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin: 20px;
+}
+
+.my-profile, .my-medications, .user-calendar, .add-medication{
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+
+}

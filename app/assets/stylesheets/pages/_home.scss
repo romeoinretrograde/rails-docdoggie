@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.btn-gradient {
+  color: rgb(0, 0, 0);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  background: linear-gradient(#FFD942, #f0c000);
+  transition: background 0.3s ease;
+  border: 1px solid #cea500;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#ffeb99, #ffdf60);
+  color: rgb(0, 0, 0);
+}

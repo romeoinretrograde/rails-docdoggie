@@ -1,2 +1,4 @@
 class DoggiesController < ApplicationController
+
+  
 end

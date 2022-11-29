@@ -1,6 +1,5 @@
 class DoggiesController < ApplicationController
 
-
   def new
     @doggie = Doggie.new
   end
@@ -21,5 +20,4 @@ class DoggiesController < ApplicationController
   def doggie_params
     params.require(:doggie).permit(:user_id, :petname)
   end
-
 end

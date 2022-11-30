@@ -7,6 +7,7 @@ class DoggiesController < ApplicationController
 
   def create
     @doggie = Doggie.new(params[:doggie_params])
+    
     if @doggie.save
       redirect_to dashboard_path, status: :see_other
     else

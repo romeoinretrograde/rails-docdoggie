@@ -7,6 +7,7 @@ class DoggiesController < ApplicationController
 
   def create
     @doggie = Doggie.new(params[:doggie_params])
+    @doggie.user = current_user
     
     if @doggie.save
       redirect_to dashboard_path, status: :see_other
@@ -19,6 +20,6 @@ class DoggiesController < ApplicationController
   private
 
   def doggie_params
-    params.require(:doggie).permit(:user_id, :petname)
+    params.require(:doggie).permit(:petname)
   end
 end

@@ -14,8 +14,24 @@
   color: rgb(0, 0, 0);
 }
 
-.image-background {
+.home-background {
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  padding: 150px 0;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.home-button {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.product-offer {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

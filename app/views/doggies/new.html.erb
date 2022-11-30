@@ -1,5 +1,4 @@
-
-<div id="doggieCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+<div id="doggieCarousel" class="carousel carousel-dark slide" data-bs-interval="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <%= image_tag "doggies/brown-docdoggie.png", class:"d-block w-100" %>
@@ -28,4 +27,11 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+<h1>Choose a nice color for your new buddy's fur!</h1>
+<div class="new-doggie-container">
+<%= simple_form_for @doggie do |f| %>
+  <%= f.input :petname, label: '"Woof, woof! What do you want to call me, hooman?"' %>
+  <%= f.submit "Let's go!" %>
+<% end %>
 </div>

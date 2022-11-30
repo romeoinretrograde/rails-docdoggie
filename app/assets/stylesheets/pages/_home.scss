@@ -1,19 +1,26 @@
 // Specific CSS for your home-page
 .btn-gradient {
   color: rgb(0, 0, 0);
-  padding: 8px 24px;
+  // padding: 12px 20px;
   border-radius: 50px;
   font-weight: bold;
-  background: linear-gradient(#FFD942, #f0c000);
+  font-size: 25px;
+  background: #FCD745;
   transition: background 0.3s ease;
-  border: 1px solid #cea500;
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(#ffeb99, #ffdf60);
+  background: #f0c000;
   color: rgb(0, 0, 0);
 }
 
+.btn-home {
+  display: flex;
+  justify-content: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 22px;
+}
 .home-background {
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,16 +29,20 @@
   min-height: 100vh;
 }
 
-.home-button {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+h2, h1, h3 {
+  margin: 15px;
+  margin-left: 16px;
+  margin-right: 16px;
+  text-align: center;
+  font-weight: bold;
+  ;
 }
 
-.product-offer {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.home-info {
+  margin-top: 30%;
+}
+
+.home-info-ca {
+  margin-top: 60%;
 }

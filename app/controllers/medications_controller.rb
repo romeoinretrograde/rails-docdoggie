@@ -15,6 +15,11 @@ class MedicationsController < ApplicationController
   end
 
   def show
+    @all_weekdays = { "Sunday" => false, "Monday" => false, "Tuesday" => false, "Wednesday" => false, "Thursday" => false, "Friday" => false, "Saturday" => false }
+
+    @medication.weekdays.each do |weekday|
+      @all_weekdays[weekday] = true
+    end
   end
 
   def index

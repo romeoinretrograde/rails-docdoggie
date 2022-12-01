@@ -1,0 +1,30 @@
+<div class="medication-show-frame">
+
+  <h2><strong><%= @medication.name %></strong></h2>
+  <%= image_tag "icons/pill.png", class: "med-pill-image" %>
+  <h1> <strong><%= @medication.hours.strftime("%I:%M %p")  %></strong>  </h1>
+    <h1>
+      <% @all_weekdays.each do |key, value| %>
+        <% if value %>
+          <strong style="color: #FF8787;"><%= key[0] %></strong>
+        <% else %>
+          <strong style="color: black;"><%= key[0] %></strong>
+        <% end %>
+      <% end %>
+    </h1>
+
+  <div class="medication-box-details">
+    <h3><strong>Dosage:</strong> <%= @medication.dosage %> </h3>
+    <h3><strong>Taken:</strong>
+      <% if @medication.taken %>
+      <i class="fa-solid fa-square-check"></i>
+      <% else %>
+      <i class="fa-solid fa-square-xmark"></i>
+      <% end %>
+    <h3><strong>Purpose:</strong> <%= @medication.purpose %></h3>
+      <div class="medication-description">
+        <p><strong>Description:</strong></p>
+        <p>Fluoxetine is an antidepressant of the selective serotonin reuptake inhibitor (SSRI) class.[2] It is used for the treatment of major depressive disorder, obsessive–compulsive disorder (OCD), bulimia nervosa, panic disorder, and premenstrual dysphoric disorder.</p>
+      </div>
+  </div>
+</div>

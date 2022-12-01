@@ -20,6 +20,6 @@ puts "Generating user medication"
 
 med1 = Medication.create(name: "qualquercoisa", dosage: 100, hours: "08:00", taken: false, purpose: "menosmal", user_id: user1.id)
 med2 = Medication.create(name: "maiscoisa", dosage: 50, hours: "13:30", taken: false, purpose: "menosmal", user_id: user1.id)
-med3 = Medication.create(name: "aindamaiscoisa", dosage: 50, hours: "20:00", taken: false, purpose: "menosmal", user_id: user1.id)
+med3 = Medication.create(name: "aindamaiscoisa", dosage: 50, hours: "20:00", taken: false, purpose: "menosmal", user_id: user1.id, weekdays: ["Monday", "Wednesday", "Friday"])
 
 puts "Finished"

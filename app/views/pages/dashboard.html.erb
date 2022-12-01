@@ -1,6 +1,6 @@
 <div class="dashboard-container">
   <div class="dashboard-docdoggie">
-    <div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.jpg" %>')">
+    <div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
     </div>
     <img class="docdoggie-pet" src="" alt="">
   </div>
@@ -12,31 +12,39 @@
   <div class="dashboard-items">
 
     <div class="my-profile">
-      <div class="d-flex justify-content-between flex-column">
-        <%= image_tag "icons/collar-icon.png", class: "collar-image" %>
-        <h3 class="icon-text">My Profile</h3>
-      </div>
+      <%= link_to profile_path do %>
+        <div class="d-flex justify-content-between flex-column">
+          <%= image_tag "icons/collar-icon.png", class: "collar-image" %>
+          <h3 class="icon-text">My Profile</h3>
+        </div>
+      <% end %>
     </div>
 
     <div class="my-medications">
+    <%= link_to medications_path do %>
       <div class="d-flex justify-content-between flex-column">
         <%= image_tag "icons/medications.png", class: "medications-image" %>
         <h3 class="icon-text">Medications</h3>
       </div>
+      <% end %>
     </div>
 
     <div class="user-calendar">
+    <%= link_to calendar_path do %>
       <div class="d-flex justify-content-between flex-column">
         <%= image_tag "icons/calendar-icon.png", class: "calendar-image" %>
         <h3 class="icon-text">Calendar</h3>
       </div>
+    <% end %>
     </div>
 
     <div class="add-medication">
+    <%= link_to new_medication_path do %>
       <div class="d-flex justify-content-between flex-column">
         <%= image_tag "icons/pill.png", class: "pill-image" %>
         <h3 class="icon-text">Add Meds</h3>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

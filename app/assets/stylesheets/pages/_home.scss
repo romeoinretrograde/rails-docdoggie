@@ -1,19 +1,26 @@
 // Specific CSS for your home-page
 .btn-gradient {
   color: rgb(0, 0, 0);
-  padding: 8px 24px;
+  // padding: 12px 20px;
   border-radius: 50px;
   font-weight: bold;
-  background: linear-gradient(#FFD942, #f0c000);
+  font-size: 25px;
+  background: #FCD745;
   transition: background 0.3s ease;
-  border: 1px solid #cea500;
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(#ffeb99, #ffdf60);
+  background: #f0c000;
   color: rgb(0, 0, 0);
 }
 
+.btn-home {
+  display: flex;
+  justify-content: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 22px;
+}
 .home-background {
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,16 +29,42 @@
   min-height: 100vh;
 }
 
-.home-button {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.home-info-1, .home-info-2, .home-info-3 {
+  margin: 15px;
+  margin-left: 16px;
+  margin-right: 16px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30%;
 }
 
-.product-offer {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.home-info-1 {
+  animation: fadeIn 3s;
+}
+
+.home-info-2 {
+  margin-top: 60%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.closed-box {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 3s;
+}
+
+.open-box {
+  height: 400px;
+  display: flex;
+  justify-content: center;
 }

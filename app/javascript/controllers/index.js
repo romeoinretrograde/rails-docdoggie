@@ -9,3 +9,6 @@ application.register("doggies", DoggiesController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import MedicationsController from "./medications_controller"
+application.register("medications", MedicationsController)

@@ -1,2 +1,73 @@
-<h1>Medications</h1>
+<div data-controller="medications">
+  <h1>Medications</h1>
+  <div class="list-buttons">
+    <div class="all-button" type="button" data-action="click->medications#activate">All</div>
+    <div class="morning-button" type="button" data-action="click->medications#activate">Morning</div>
+    <div class="afternoon-button" type="button" data-action="click->medications#activate">Afternoon</div>
+    <div class="night-button" type="button" data-action="click->medications#activate">Night</div>
+  </div>
 
+  <div id="medications-list">
+    <div class="d-none" id="all-meds" data-medications-target="timeOfDay">
+      <% @all_medications.each do |medication|%>
+        <div class="med-div">
+          <div class="name-and-dosage">
+            <p><%= medication.name %></p>
+            <p><%= "#{medication.dosage}mg" %></p>
+          </div>
+          <div class="time-and-weekdays">
+            <p><%= medication.hours.strftime("%I:%M %p") %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="d-none" id="morning-meds" data-medications-target="timeOfDay">
+      <% @morning_medications.each do |medication| %>
+        <div class="med-div">
+          <div class="med-div">
+          <div class="name-and-dosage">
+            <p><%= medication.name %></p>
+            <p><%= "#{medication.dosage}mg" %></p>
+          </div>
+          <div class="time-and-weekdays">
+            <p><%= medication.hours.strftime("%I:%M %p") %></p>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="d-none" id="afternoon-meds" data-medications-target="timeOfDay">
+      <% @afternoon_medications.each do |medication| %>
+        <div class="med-div">
+          <div class="med-div">
+          <div class="name-and-dosage">
+            <p><%= medication.name %></p>
+            <p><%= "#{medication.dosage}mg" %></p>
+          </div>
+          <div class="time-and-weekdays">
+            <p><%= medication.hours.strftime("%I:%M %p") %></p>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="d-none" id="night-meds" data-medications-target="timeOfDay">
+      <% @night_medications.each do |medication| %>
+        <div class="med-div">
+          <div class="med-div">
+          <div class="name-and-dosage">
+            <p><%= medication.name %></p>
+            <p><%= "#{medication.dosage}mg" %></p>
+          </div>
+          <div class="time-and-weekdays">
+            <p><%= medication.hours.strftime("%I:%M %p") %></p>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

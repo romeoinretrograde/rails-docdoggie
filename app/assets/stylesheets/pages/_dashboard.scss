@@ -1,5 +1,6 @@
 .dashboard-container {
   height: 100vh;
+  background-color: rgb(255, 255, 255);
 }
 
 .background-dashboard{
@@ -31,6 +32,9 @@
   height: 150px;
   width: 150px;
 
+  &:active {
+    background-color: rgb(227, 227, 227);
+  }
 }
 
 .collar-image, .medications-image, .calendar-image, .pill-image {
@@ -44,7 +48,4 @@ a {
 
 .icon-text{
   color:black
-
-.shadow-dashboard{
-  //box-shadow: 0 0 0px rgba(0,0,0,0.2);
 }

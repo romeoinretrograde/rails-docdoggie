@@ -1,0 +1,35 @@
+.medication-show-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+}
+
+.med-pill-image {
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.medication-box-details {
+  margin: 20px;
+  margin-top: 50px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.medication-description {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: rgb(234, 234, 234);
+  border-radius: 10px;
+
+  p {
+    margin-bottom: 0%;
+  }
+}

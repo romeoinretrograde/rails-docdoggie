@@ -1,50 +1,54 @@
-<div data-controller="doggies">
-  <div id="doggieCarousel" class="carousel carousel-dark slide" data-bs-interval="false" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag "doggies/cream-docdoggie.png", class:"d-block w-100", id:"cream-docdoggie" %>
+<div class="all">
+
+  <div data-controller="doggies">
+    <div id="doggieCarousel" class="carousel carousel-dark slide" data-bs-interval="false" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag "doggies/cream-docdoggie.png", class:"d-block w-100", id:"cream-docdoggie" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "doggies/gray-docdoggie.png", class:"d-block w-100", id:"gray-docdoggie" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "doggies/brown-docdoggie.png", class:"d-block w-100", id:"brown-docdoggie" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "doggies/pink-docdoggie.png", class:"d-block w-100", id:"pink-docdoggie" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "doggies/yellow-docdoggie.png", class:"d-block w-100", id:"yellow-docdoggie" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "doggies/red-docdoggie.png", class:"d-block w-100", id:"red-docdoggie" %>
+        </div>
       </div>
-      <div class="carousel-item">
-        <%= image_tag "doggies/gray-docdoggie.png", class:"d-block w-100", id:"gray-docdoggie" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "doggies/brown-docdoggie.png", class:"d-block w-100", id:"brown-docdoggie" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "doggies/pink-docdoggie.png", class:"d-block w-100", id:"pink-docdoggie" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "doggies/yellow-docdoggie.png", class:"d-block w-100", id:"yellow-docdoggie" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "doggies/red-docdoggie.png", class:"d-block w-100", id:"red-docdoggie" %>
+      <button class="carousel-control-prev" type="button" data-bs-target="#doggieCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#doggieCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="new-doggie-container">
+      <div>
+      <h1 class="mb-5">Choose a nice color for your new buddy's fur!</h1>
+      <%= simple_form_for @doggie,
+                          html: {
+                            data: {
+                              doggies_target: "form",
+                              action: "submit->doggies#getImage"
+                            }
+                          } do |f| %>
+        <%= f.input :petname, label: '"Woof, woof! What do you want to call me, hooman?"' %>
+        <%= f.hidden_field :image_url, data: { doggies_target: "input" } %>
+        <%= f.submit class:"btn-create-new-dog mt-4" %>
+      <% end %>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#doggieCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#doggieCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  
-  <h1>Choose a nice color for your new buddy's fur!</h1>
-  <div class="new-doggie-container">
-  <%= simple_form_for @doggie,
-                      html: {
-                        data: {
-                          doggies_target: "form",
-                          action: "submit->doggies#getImage"
-                        }
-                      } do |f| %>
-    <%= f.input :petname, label: '"Woof, woof! What do you want to call me, hooman?"' %>
-    <%= f.hidden_field :image_url, data: { doggies_target: "input" } %>
-    <%= f.submit "Let's go!" %>
-  <% end %>
   </div>
 </div>
-
 
 <%#7= image_tag @doggie.image_url %>

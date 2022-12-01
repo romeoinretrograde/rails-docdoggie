@@ -3,3 +3,27 @@
   height: 390.4px;
   background-size: cover;
 }
+
+.new-doggie-container{
+  background-color: white;
+  text-align: center;
+  height: 100vh;
+  padding: 40px;
+}
+
+.all{
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.btn-create-new-dog{
+  background: #FCD745;
+  color: rgb(0, 0, 0);
+  transition: 0.1s ease;
+  border-radius: 50px;
+}
+
+.btn-create-new-dog:active{
+  background: #f0c000;
+  color: rgb(0, 0, 0);
+}

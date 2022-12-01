@@ -22,8 +22,35 @@ class MedicationsController < ApplicationController
     end
   end
 
+  # <% time = medication.hours %>
+  # <% @hours = time.hour %>
+  # <% if @hours < 13 %> <%# ...12 %>
+
+  # <% elsif @hours > 12 && @hours < 19  %> <%# 13-18 %>
+
+  # <% else %> <%# 19... %>
+
+  # <% end %>
+
+
   def index
-    @medications = Medication.all
+    @all_medications = Medication.where(user: current_user)
+
+    @morning_medications = []
+    @afternoon_medications = []
+    @night_medications = []
+
+    @all_medications.each do |medication|
+      time = medication.hours
+      @hours = time.hour # Returns an integer
+      if @hours < 13
+        @morning_medications << medication
+      elsif @hours > 12 && @hours < 19
+        @afternoon_medications << medication
+      else
+        @night_medications << medication
+      end
+    end
   end
 
   def edit

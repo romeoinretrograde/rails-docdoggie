@@ -10,13 +10,11 @@
       <%= f.input :taken, :input_html => { :class => "form-round"} %>
       <%= f.input :purpose, :input_html => { :class => "form-round"} %>
       <div id="medication-checkboxes">
-      <%= f.collection_check_boxes(:weekdays, {"Monday":1, "Thusday":2 , "Wednesday":3 ,"Thursday":4 ,"Friday":5 ,"Saturday":6 ,"Sunday":7}, :last, :first)%>
+        <%= f.collection_check_boxes(:weekdays, {"Monday": "Monday", "Tuesday": "Tuesday" , "Wednesday": "Wednesday" ,"Thursday": "Thursday" ,"Friday": "Friday" ,"Saturday": "Saturday" ,"Sunday": "Sunday"}, :last, :first)%>
       </div>
       <%= f.input :description, :input_html => { :class => "form-round"} %>
       <%= f.submit 'Add medication' %>
     <% end %>
-
-
   </div>
 
 </div>

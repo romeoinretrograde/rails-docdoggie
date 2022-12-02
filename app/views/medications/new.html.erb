@@ -1,0 +1,16 @@
+<div></div>
+
+<div class="add_your_med">
+<h2>Medication</h2>
+
+  <div class="form_round">
+    <%= simple_form_for @medication do |f| %>
+      <%= f.input :name %>
+      <%= f.input :dosage %>
+      <%= f.input :hours %>
+      <%= f.input :taken %>
+      <%= f.input :purpose %>
+      <%= f.submit 'Add medication'%>
+    <% end %>
+  </div>
+</div>

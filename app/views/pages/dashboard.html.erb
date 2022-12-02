@@ -1,12 +1,16 @@
 <div class="dashboard-container">
   <div class="dashboard-docdoggie">
     <div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
+    <%= image_tag @doggie.image_url, class:"docdoggie-pet"%>
     </div>
-    <img class="docdoggie-pet" src="" alt="">
   </div>
   <div class="dashboard-header">
-    <h1>"Doggie Name"</h1>
-    <h3>"Stats"</h3>
+    <h1><%= @doggie.petname %></h1>
+    <% if @days_together = 0 %>
+      <h4>First day together!</h4>
+    <% else %>
+      <h4><%= "#{@days_together} days together" %></h4>
+    <% end %>
   </div>
 
   <div class="dashboard-items">

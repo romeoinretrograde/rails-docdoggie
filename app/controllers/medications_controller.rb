@@ -15,23 +15,18 @@ class MedicationsController < ApplicationController
   end
 
   def show
-    @all_weekdays = { "Sunday" => false, "Monday" => false, "Tuesday" => false, "Wednesday" => false, "Thursday" => false, "Friday" => false, "Saturday" => false }
+    @all_weekdays = { "Sunday" => false,
+                      "Monday" => false,
+                      "Tuesday" => false,
+                      "Wednesday" => false,
+                      "Thursday" => false,
+                      "Friday" => false,
+                      "Saturday" => false }
 
     @medication.weekdays.each do |weekday|
       @all_weekdays[weekday] = true
     end
   end
-
-  # <% time = medication.hours %>
-  # <% @hours = time.hour %>
-  # <% if @hours < 13 %> <%# ...12 %>
-
-  # <% elsif @hours > 12 && @hours < 19  %> <%# 13-18 %>
-
-  # <% else %> <%# 19... %>
-
-  # <% end %>
-
 
   def index
     @all_medications = Medication.where(user: current_user)
@@ -51,6 +46,14 @@ class MedicationsController < ApplicationController
         @night_medications << medication
       end
     end
+
+    @all_weekdays = { "Sunday" => false,
+      "Monday" => false,
+      "Tuesday" => false,
+      "Wednesday" => false,
+      "Thursday" => false,
+      "Friday" => false,
+      "Saturday" => false }
   end
 
   def edit

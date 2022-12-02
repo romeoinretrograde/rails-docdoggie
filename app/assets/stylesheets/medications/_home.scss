@@ -1,1 +1,54 @@
 // CSS for the Medications Index
+
+.list-buttons {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+
+  .toggle-list {
+    display: flex;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    align-items: center;
+    margin: 15px 7px;
+    color: rgb(184, 184, 184);
+    background-color: white;
+    height: 75px;
+    font-size: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .active-button {
+    color:rgb(95, 220, 255);
+  }
+}
+
+#medications-lists {
+  margin: 5px 25px;
+  padding-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+
+  .med-div {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    margin: 15px;
+    color: black;
+
+    .name-and-dosage {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .time-and-weekdays {
+      display: flex;
+      text-align: right;
+      flex-direction: column;
+    }
+  }
+}

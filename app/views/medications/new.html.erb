@@ -3,14 +3,18 @@
 <div class="add_your_med">
 <h2>Medication</h2>
 
-  <div class="form_round">
     <%= simple_form_for @medication do |f| %>
-      <%= f.input :name %>
-      <%= f.input :dosage %>
-      <%= f.input :hours %>
-      <%= f.input :taken %>
-      <%= f.input :purpose %>
-      <%= f.submit 'Add medication'%>
+      <%= f.input :name, :input_html => { :class => "form-round"} %>
+      <%= f.input :dosage, label:"Dosage (mg)", :input_html => { :class => "form-round"} %>
+      <%= f.input :hours, :input_html => { :class => "form-round"} %>
+      <%= f.input :taken, :input_html => { :class => "form-round"} %>
+      <%= f.input :purpose, :input_html => { :class => "form-round"} %>
+      <%= f.collection_check_boxes(:weekdays, {"Monday":1, "Thusday":2 , "Wednesday":3 ,"Thursday":4 ,"Friday":5 ,"Saturday":6 ,"Sunday":7}, :last, :first)%>
+      <%= f.input :description, :input_html => { :class => "form-round"} %>
+      <%= f.submit 'Add medication' %>
     <% end %>
+
+
   </div>
+
 </div>

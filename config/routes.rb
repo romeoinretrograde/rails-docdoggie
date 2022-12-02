@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get "/profile", to: "pages#profile"
   get "/calendar", to: "pages#calendar"
 
-  resources :doggies, only: %i[new create]
+  resources :doggies, only: %i[new create update]
   resources :medications
 end

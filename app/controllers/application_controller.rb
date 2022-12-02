@@ -7,5 +7,4 @@ class ApplicationController < ActionController::Base
     else
       dashboard_path(user)
     end
-  end
 end

@@ -2,7 +2,6 @@
 
 <div class="add_your_med">
 <h2>Medication</h2>
-
   <div class="form_round">
     <%= simple_form_for @medication do |f| %>
       <%= f.input :name %>
@@ -10,7 +9,11 @@
       <%= f.input :hours %>
       <%= f.input :taken %>
       <%= f.input :purpose %>
+      <%= f.collection_check_boxes(:weekdays, {"Monday":1, "Thusday":2 , "Wednesday":3 ,"Thursday":4 ,"Friday":5 ,"Saturday":6 ,"Sunday":7}, :last, :first) %>
+      <%= f.input :description %>
       <%= f.submit 'Add medication'%>
     <% end %>
+
   </div>
+
 </div>

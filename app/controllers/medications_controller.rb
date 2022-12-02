@@ -9,7 +9,7 @@ class MedicationsController < ApplicationController
     @medication = Medication.new(medication_params)
     @medication.user = current_user
     if @medication.save
-      redirect_to medications_path(@medication)
+      redirect_to medications_path
     else
       redirect_to new_medication_path
     end
@@ -23,10 +23,11 @@ class MedicationsController < ApplicationController
                       "Thursday" => false,
                       "Friday" => false,
                       "Saturday" => false }
-
-    @medication.weekdays.each do |weekday|
+    @medication.weekdays.reject { |medication| medication == "" }.each do |weekday|
       @all_weekdays[weekday] = true
     end
+
+    raise
   end
 
   def index

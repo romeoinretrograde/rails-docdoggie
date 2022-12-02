@@ -7,10 +7,11 @@ class MedicationsController < ApplicationController
 
   def create
     @medication = Medication.new(medication_params)
+    @medication.user = current_user
     if @medication.save
-      puts "Medication saved"
+      redirect_to medications_path(@medication)
     else
-      puts "Medication not saved"
+      redirect_to new_medication_path
     end
   end
 
@@ -72,7 +73,7 @@ class MedicationsController < ApplicationController
   private
 
   def medication_params
-    params.require(:medication).permit(:name, :dosage, :hours, :taken, :purpose, :weekdays)
+    params.require(:medication).permit(:name, :dosage, :hours, :taken, :purpose, weekdays: [])
   end
 
   def set_medication

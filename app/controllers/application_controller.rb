@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
     else
       dashboard_path(user)
     end
+  end
+
+  def user_root_path
+    dashboard_url
+  end
 end

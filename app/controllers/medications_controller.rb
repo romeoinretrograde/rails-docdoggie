@@ -26,8 +26,6 @@ class MedicationsController < ApplicationController
     @medication.weekdays.reject { |medication| medication == "" }.each do |weekday|
       @all_weekdays[weekday] = true
     end
-
-    raise
   end
 
   def index

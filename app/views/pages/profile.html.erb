@@ -1,1 +1,65 @@
-<h1>My profile</h1>
+<div class="profile-page-frame">
+  <div data-controller="doggies" class="text-center mb-4">
+    <div class="doggie-image-frame mt-3 mb-2">
+      <%= image_tag current_user.doggie.image_url %>
+    </div>
+
+    <div class="edit-doggie-frame" data-doggies-target="doggieInfo">
+      <h2 class="fw-bold text-center"><%= current_user.doggie.petname %></h2>
+      <i class="fa-solid fa-pen position-absolute" data-action="click->doggies#edit"></i>
+    </div>
+
+    <%= simple_form_for current_user.doggie,
+                        html: {
+                           method: :patch,
+                          class: "d-none",
+                          data: {
+                            doggies_target: "doggieForm"
+                          }
+                        } do |f| %>
+      <%= f.input :petname,
+                  label: false,
+                  input_html: {
+                    class: "doggie-petname-input px-0 text-center"
+                  } %>
+      <%= f.submit "Save" %>
+    <% end %>
+  </div>
+
+  <div class="text-center" data-controller="profile">
+    <div data-profile-target="edit">
+      <p class="mb-0 text-decoration-underline" data-action="click->profile#edit">Edit your account</p>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+    <%= simple_form_for(current_user,
+                        as: :user,
+                        url: registration_path(:user),
+                        html: {
+                          method: :put,
+                          class: "d-none",
+                          data: { profile_target: "form" }
+                        }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :password,
+                    hint: "Leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    hint: "We need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Update" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.doggie-image-frame {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url("backgrounds/park.png");
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+
+  img {
+    position: absolute;
+    bottom: 0px;
+    width: 88%;
+    height: 88%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.edit-doggie-frame {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+
+  i {
+    top: -5px;
+    right: -20px;
+  }
+}
+
+.doggie-petname-input {
+  font-size: 25px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.text-center {
+  width: max-content;
+  margin: 0 auto;
+}

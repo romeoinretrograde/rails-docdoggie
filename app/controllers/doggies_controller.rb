@@ -14,7 +14,15 @@ class DoggiesController < ApplicationController
     else
       render new_doggie_path, status: :unprocessable_entity
     end
+  end
 
+  def update
+    @doggie = Doggie.find(params[:id])
+    if @doggie.update(doggie_params)
+      redirect_to profile_path
+    else
+      render "pages/profile", status: :unprocessable_entity
+    end
   end
 
   private

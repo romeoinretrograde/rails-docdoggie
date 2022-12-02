@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <% if (controller_name == "pages" && (action_name == "profile" || action_name == "calendar")) || (controller_name == "medications" && (action_name == "index" || action_name == "show" || action_name == "new")) %>
+      <%= render "shared/navbar" %>
+    <% end %>
+
     <%= render "shared/flashes" %>
 
     <%= yield %>

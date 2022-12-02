@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import MedicationsController from "./medications_controller"
 application.register("medications", MedicationsController)
+
+import ProfileController from "./profile_controller"
+application.register("profile", ProfileController)

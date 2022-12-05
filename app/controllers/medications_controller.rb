@@ -72,7 +72,7 @@ class MedicationsController < ApplicationController
   private
 
   def medication_params
-    params.require(:medication).permit(:name, :dosage, :hours, :taken, :purpose, weekdays: [])
+    params.require(:medication).permit(:name, :dosage, :hours, :taken, :purpose, :description, weekdays: [])
   end
 
   def set_medication

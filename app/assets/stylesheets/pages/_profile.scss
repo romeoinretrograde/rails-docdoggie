@@ -44,13 +44,22 @@
 }
 
 .btn-gradient{
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: linear-gradient(#9de5aa, #76d9a2);
+  background-color: #9de5aa;
   transition: background 0.3s ease;
   border: 1px solid #7bd3a1;
   display: flex;
   justify-content: center;
+
+  &:active {
+    background-color: #46ad59;
+    color: white;
+  }
 }

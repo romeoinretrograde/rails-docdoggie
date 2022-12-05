@@ -5,7 +5,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 0px 15px;
   justify-content: center;
-  position: sticky;
 
   .toggle-list {
     display: flex;
@@ -29,6 +28,7 @@
 .medication-info {
   display: grid;
   grid-template-columns: 3fr 1fr;
+  margin-bottom: 15px;
 
   .delete-button {
     display: flex;
@@ -74,6 +74,26 @@
       display: flex;
       text-align: right;
       flex-direction: column;
+    }
+  }
+}
+
+.float {
+  .floating-button {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #9DE5AA,;
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    i {
+      color: white;
+      font-size: 40px;
     }
   }
 }

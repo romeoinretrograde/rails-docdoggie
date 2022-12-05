@@ -49,6 +49,7 @@
     <div class="d-none" id="morning-meds" data-medications-target="timeOfDay">
 
       <% @morning_medications.each do |medication|%>
+      <div class="medication-info">
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
               <div><%= medication.name %></div>
@@ -76,10 +77,11 @@
             </div>
         <% end %>
         <div class="delete-button">
-          <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %>
+            <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
         </div>
+      </div>
       <% end %>
 
     </div>
@@ -87,6 +89,7 @@
     <div class="d-none" id="afternoon-meds" data-medications-target="timeOfDay">
 
       <% @afternoon_medications.each do |medication|%>
+      <div class="medication-info">
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
               <div><%= medication.name %></div>
@@ -113,10 +116,11 @@
             </div>
         <% end %>
         <div class="delete-button">
-          <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %>
+            <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
         </div>
+      </div>
       <% end %>
 
 
@@ -125,6 +129,7 @@
     <div class="d-none" id="night-meds" data-medications-target="timeOfDay">
 
       <% @night_medications.each do |medication|%>
+      <div class="medication-info">
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
               <div><%= medication.name %></div>
@@ -151,13 +156,19 @@
             </div>
         <% end %>
         <div class="delete-button">
-          <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %>
+            <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
         </div>
+      </div>
       <% end %>
 
 
     </div>
+  </div>
+  <div class="float">
+    <%= link_to new_medication_path, class:"floating-button" do %>
+      <i class="fa-solid fa-plus"></i>
+    <% end %>
   </div>
 </div>

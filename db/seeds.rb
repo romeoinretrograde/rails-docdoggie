@@ -9,15 +9,14 @@ require "open-uri"
 
 puts "Cleaning the DB"
 Medication.destroy_all
-User.destroy_all
 Doggie.destroy_all
+User.destroy_all
 
 puts "Creating new docdoggie user"
 user1 = User.create(email: "johndoe@anonymous.com", password: "666666")
 
 puts "Creating doggie"
 doggie1 = Doggie.create(user: user1, image_url: "doggies/brown-docdoggie.png", petname: "Sir Chuckles")
-
 
 puts "Generating user medication"
 med1 = Medication.create(name: "Mirtazapine", dosage: 100, hours: "08:00", taken: false, purpose: "antidepressant", user_id: user1.id, weekdays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])

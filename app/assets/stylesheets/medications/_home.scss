@@ -1,7 +1,9 @@
 // CSS for the Medications Index
 
 .list-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0px 15px;
   justify-content: center;
   position: sticky;
 
@@ -24,6 +26,29 @@
   }
 }
 
+.medication-info {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  .delete-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    margin-left: 14px;
+    color: rgb(184, 184, 184);
+    background-color: rgb(255, 71, 71);
+    font-size: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    a {
+      color: white;
+      font-size: 30px;
+    }
+  }
+}
+
 #medications-lists {
   margin: 5px 25px;
   padding-bottom: 10px;
@@ -33,11 +58,11 @@
   .med-div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10px;
-    margin: 15px;
     color: black;
 
     .name-and-dosage {

@@ -18,7 +18,6 @@ user1 = User.create(email: "johndoe@anonymous.com", password: "666666")
 puts "Creating doggie"
 doggie1 = Doggie.create(user: user1, image_url: "doggies/brown-docdoggie.png", petname: "Sir Chuckles")
 
-
 puts "Generating user medication"
 med1 = Medication.create(name: "Mirtazapine", dosage: 100, hours: "08:00", taken: false, purpose: "antidepressant", user_id: user1.id, weekdays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
 med2 = Medication.create(name: "Temazepam", dosage: 15, hours: "13:30", taken: false, purpose: "insomnia", user_id: user1.id, weekdays: ["Sunday"])

@@ -1,5 +1,3 @@
-<div></div>
-
 <div class="add_your_med">
 <h2>Medication</h2>
 
@@ -13,7 +11,9 @@
         <%= f.collection_check_boxes(:weekdays, {"Monday": "Monday", "Tuesday": "Tuesday" , "Wednesday": "Wednesday" ,"Thursday": "Thursday" ,"Friday": "Friday" ,"Saturday": "Saturday" ,"Sunday": "Sunday"}, :last, :first)%>
       </div>
       <%= f.input :description, :input_html => { :class => "form-round"} %>
-      <%= f.submit 'Add medication' %>
+      <div class="btn-addmed">
+        <%= f.submit 'Add medication' => { :class => "btn-round-addmed"} %>
+      </div>
     <% end %>
   </div>
 

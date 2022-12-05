@@ -12,7 +12,7 @@
 
 
   <body style="background-color: white">
-    <% if (controller_name == "pages" && (action_name == "profile" || action_name == "calendar")) || (controller_name == "medications" && (action_name == "index" || action_name == "show" || action_name == "new")) %>
+    <% if (controller_name == "pages" && (action_name == "profile" || action_name == "calendar")) || (controller_name == "medications" && (action_name == "index" || action_name == "show" || action_name == "new" || action_name == "edit")) %>
       <%= render "shared/navbar" %>
     <% end %>
     <%= render "shared/flashes" %>

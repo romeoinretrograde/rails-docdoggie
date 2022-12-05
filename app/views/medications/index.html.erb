@@ -1,40 +1,47 @@
 <div class="medications-dashboard" data-controller="medications">
   <div class="list-buttons">
-    <div class="toggle-list all-button" type="button" data-action="click->medications#activate" data-medications-target="listButton"><i class="fa-solid fa-list-check"></i></div>
+    <div class="toggle-list all-button active-button" type="button" data-action="click->medications#activate" data-medications-target="listButton"><i class="fa-solid fa-list-check"></i></div>
     <div class="toggle-list morning-button" type="button" data-action="click->medications#activate" data-medications-target="listButton"><i class="fa-solid fa-sun"></i></div>
     <div class="toggle-list afternoon-button" type="button" data-action="click->medications#activate" data-medications-target="listButton"><i class="fa-solid fa-cloud-sun"></i></div>
     <div class="toggle-list night-button" type="button" data-action="click->medications#activate" data-medications-target="listButton"><i class="fa-solid fa-cloud-moon"></i></div>
   </div>
 
   <div id="medications-lists">
-    <div class="d-none" id="all-meds" data-medications-target="timeOfDay">
+    <div class="" id="all-meds" data-medications-target="timeOfDay">
 
       <% @all_medications.each do |medication|%>
-        <%= link_to medication_path(medication), class:"med-div" do %>
-            <div class="name-and-dosage">
-              <div><%= medication.name %></div>
-              <div><%= "#{medication.dosage}mg" %></div>
-            </div>
-            <div class="time-and-weekdays">
-              <div><%= medication.hours.strftime("%I:%M %p") %></div>
-              <div>
-                <% medication.weekdays.each do |weekday|%>
-                  <% @all_weekdays[weekday] = true %>
-                <% end %>
-                <% @all_weekdays.each do |key, value| %>
-                  <% if value %>
-                    <strong style="color: #FF8787;"><%= key[0] %></strong>
-                  <% else %>
-                    <strong style="color: black;"><%= key[0] %></strong>
-                  <% end %>
-                <% end %>
-
-              <% medication.weekdays.each do |weekday|%>
-                  <% @all_weekdays[weekday] = false %>
-                <% end %>
+        <div class="medication-info">
+          <%= link_to medication_path(medication), class:"med-div" do %>
+              <div class="name-and-dosage">
+                <div><%= medication.name %></div>
+                <div><%= "#{medication.dosage}mg" %></div>
               </div>
-            </div>
-        <% end %>
+              <div class="time-and-weekdays">
+                <div><%= medication.hours.strftime("%I:%M %p") %></div>
+                <div>
+                  <% medication.weekdays.each do |weekday|%>
+                    <% @all_weekdays[weekday] = true %>
+                  <% end %>
+                  <% @all_weekdays.each do |key, value| %>
+                    <% if value %>
+                      <strong style="color: #FF8787;"><%= key[0] %></strong>
+                    <% else %>
+                      <strong style="color: black;"><%= key[0] %></strong>
+                    <% end %>
+                  <% end %>
+
+                <% medication.weekdays.each do |weekday|%>
+                    <% @all_weekdays[weekday] = false %>
+                <% end %>
+                </div>
+              </div>
+          <% end %>
+          <div class="delete-button">
+            <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
+          </div>
+        </div>
       <% end %>
 
     </div>
@@ -68,6 +75,11 @@
               </div>
             </div>
         <% end %>
+        <div class="delete-button">
+          <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </div>
       <% end %>
 
     </div>
@@ -100,6 +112,11 @@
               </div>
             </div>
         <% end %>
+        <div class="delete-button">
+          <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </div>
       <% end %>
 
 
@@ -133,6 +150,11 @@
               </div>
             </div>
         <% end %>
+        <div class="delete-button">
+          <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </div>
       <% end %>
 
 

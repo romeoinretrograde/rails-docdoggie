@@ -9,8 +9,8 @@ require "open-uri"
 
 puts "Cleaning the DB"
 Medication.destroy_all
-User.destroy_all
 Doggie.destroy_all
+User.destroy_all
 
 puts "Creating new docdoggie user"
 user1 = User.create(email: "johndoe@anonymous.com", password: "666666")

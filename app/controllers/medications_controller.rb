@@ -7,6 +7,9 @@ class MedicationsController < ApplicationController
 
   def create
     @medication = Medication.new(medication_params)
+    # @medication.weekdays = @medication.weekdays.drop(1)
+    @medication.weekdays = ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] if @medication.weekdays.include?("All")
+
     @medication.user = current_user
     if @medication.save
       redirect_to medications_path

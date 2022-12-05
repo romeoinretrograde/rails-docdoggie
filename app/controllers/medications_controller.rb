@@ -64,6 +64,8 @@ class MedicationsController < ApplicationController
 
   def update
     @medication.update(medication_params)
+    @medication.weekdays = ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] if @medication.weekdays.include?("All")
+    @medication.save
     redirect_to medication_path(@medication)
   end
 

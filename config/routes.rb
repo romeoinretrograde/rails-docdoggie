@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "/calendar", to: "pages#calendar"
 
   resources :doggies, only: %i[new create update]
-  resources :medications
+  resources :medications, except: %i[edit]
+  get "medications/:id/edit", to: "medications#edit", as: :edit_medication
 end

@@ -1,8 +1,28 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid justify-content-center my-2 position-relative">
 
-    <%= link_to dashboard_path, class: "position-absolute btn-back" do %>
-      <i class="fa-solid fa-chevron-left"></i>
+    <% if request.referer.nil? %>
+      <%= link_to dashboard_path, class: "position-absolute btn-back" do %>
+        <i class="fa-solid fa-chevron-left"></i>
+      <% end %>
+    <% else %>
+      <% if controller_name == "medications" && action_name == "index" %>
+        <%= link_to dashboard_path, class: "position-absolute btn-back" do %>
+          <i class="fa-solid fa-chevron-left"></i>
+        <% end %>
+      <% elsif controller_name == "medications" && action_name == "edit" %>
+        <%= link_to medication_path(@medication), class: "position-absolute btn-back" do %>
+          <i class="fa-solid fa-chevron-left"></i>
+        <% end %>
+      <% elsif controller_name == "medications" && action_name == "show" %>
+        <%= link_to medications_path, class: "position-absolute btn-back" do %>
+          <i class="fa-solid fa-chevron-left"></i>
+        <% end %>
+      <% else %>
+        <%= link_to request.referer, class: "position-absolute btn-back" do %>
+          <i class="fa-solid fa-chevron-left"></i>
+        <% end %>
+      <% end %>
     <% end %>
 
     <% case action_name %>
@@ -16,6 +36,8 @@
       <% title = "Medication" %>
     <% when "new" %>
       <% title = "Add a new medication" %>
+    <% when "edit" %>
+      <% title = "Edit medication details" %>
     <% end %>
 
     <h1 class="m-0 fw-bold"><%= title %></h1>

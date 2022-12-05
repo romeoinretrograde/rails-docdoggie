@@ -24,7 +24,12 @@
     <h3><strong>Purpose:</strong> <%= @medication.purpose %></h3>
       <div class="medication-description">
         <p><strong>Description:</strong></p>
-        <p> If you take more than one medicine, it is important to take them carefully and safely. Some medicines can interact and cause side effects.</p>
+        <p> <%= @medication.description %> </p>
       </div>
+   <div class="btn-edit">
+      <%= link_to "edit", edit_medication_path %>
+    </div>
   </div>
+
+
 </div>

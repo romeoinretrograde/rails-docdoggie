@@ -1,7 +1,11 @@
 .calendar-frame {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  position:absolute;
+  bottom:250px;
+  right:0;
+  left:0;
+  margin:auto;
   padding: 20px;
 }
 
@@ -13,3 +17,4 @@
 .flatpickr-calendar::after {
   display: none
 }
+

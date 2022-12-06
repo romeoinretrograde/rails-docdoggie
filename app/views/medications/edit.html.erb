@@ -1,7 +1,7 @@
 
 
 <div class="edit-med-frame">
-  <%= simple_form_for @medication do |f| %>
+  <%= simple_form_for @medication, data: {controller: "checkbox"} do |f| %>
     <%= f.input :name, :input_html => { :class => "form-round"} %>
     <%= f.input :dosage, label:"Dosage (mg)", :input_html => { :class => "form-round"} %>
     <%= f.input :hours, :input_html => { :class => "form-round"} %>

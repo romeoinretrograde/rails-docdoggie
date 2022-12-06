@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CheckboxController from "./checkbox_controller"
+application.register("checkbox", CheckboxController)
+
 import DoggiesController from "./doggies_controller"
 application.register("doggies", DoggiesController)
 

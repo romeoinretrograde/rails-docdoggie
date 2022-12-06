@@ -1,5 +1,4 @@
-<div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
-</div>
+<div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.png" %>')"></div>
 <div class="main-login h-100 d-flex flex-column">
   <h2 class="login-h2 mt-3"><strong>Log in</strong></h2>
   <div class="container d-flex flex-column justify-content-center flex-grow-1">
@@ -15,11 +14,16 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
       <div class="mt-2">
-        <div class="btn-login mt-4">
-          <%= f.button :submit, "Log in" %>
+        <div class="mt-1">
+          <%= render "devise/shared/links" %>
+        </div>
+        <div class="d-flex justify-content-center w-50 text-center mt-3">
+          <%= f.button :submit, "Log in", class: "btn-login" %>
+        </div>
+        <div class="link-box">
+          <%= link_to "Sign up", new_registration_path(resource_name), class: "links-devise" %><br />
         </div>
       </div>
     <% end %>
-  <%= render "devise/shared/links" %>
   </div>
 </div>

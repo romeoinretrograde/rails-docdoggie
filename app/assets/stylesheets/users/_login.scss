@@ -3,28 +3,27 @@
   font-size: 30px;
 }
 
-.btn-login{
-  position: fixed;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%);
+.btn-login {
   padding: 8px 24px;
   border-radius: 4px;
   background-color: #9de5aa;
   transition: 0.3s ease;
   border: 1px solid #7bd3a1;
-  display: flex;
-  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+
+  &:active {
+    color: white !important;
+    background-color: #67c679 !important;
+  }
+
+  &:hover {
+    color: white !important;
+    background-color: #67c679 !important;
+  }
 
   input {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-
-    &:active {
-      color: white;
-      background-color: #67c679
-    }
 
     &:visited {
       color: white;

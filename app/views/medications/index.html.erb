@@ -6,7 +6,7 @@
     <div class="toggle-list night-button" type="button" data-action="click->medications#activate" data-medications-target="listButton"><i class="fa-solid fa-cloud-moon"></i></div>
   </div>
 
-  <div id="medications-lists">
+  <div id="medications-lists" data-controller="swal">
     <div class="" id="all-meds" data-medications-target="timeOfDay">
 
       <% @all_medications.each do |medication|%>
@@ -36,10 +36,13 @@
                 </div>
               </div>
           <% end %>
+
+
           <div class="delete-button">
-            <%= link_to destroy_medication_path(medication), data: {turbo_method: :delete} do %>
-              <i class="fa-solid fa-trash-can"></i>
-            <% end %>
+            <div id="sweet-alert-<%= medication.id %>" class="swal-buttons">
+              <i class="fa-solid fa-trash-can" style="color:white"></i>
+            </div>
+            <%= link_to "", destroy_medication_path(medication), data: {turbo_method: :delete}, id: "delete-link", class: "hidden" %>
           </div>
         </div>
       <% end %>

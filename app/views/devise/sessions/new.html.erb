@@ -1,7 +1,7 @@
 <div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
 </div>
-<div class="h-100 d-flex flex-column">
-  <h2 class="login-h2"><strong>Log in</strong></h2>
+<div class="main-login h-100 d-flex flex-column">
+  <h2 class="login-h2 mt-3"><strong>Log in</strong></h2>
   <div class="container d-flex flex-column justify-content-center flex-grow-1">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
       <div class="form-inputs">
@@ -14,9 +14,10 @@
                     input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+      <div class="mt-2">
+        <div class="btn-login mt-4">
+          <%= f.button :submit, "Log in" %>
+        </div>
       </div>
     <% end %>
   <%= render "devise/shared/links" %>

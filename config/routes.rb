@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :doggies, only: %i[new create update]
   resources :medications, except: %i[edit destroy]
+
+  resources :notifications
+
   delete "/medications/:id", to: "medications#destroy", as: :destroy_medication
   get "medications/:id/edit", to: "medications#edit", as: :edit_medication
 

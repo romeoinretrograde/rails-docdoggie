@@ -6,10 +6,4 @@ class TakenMedicationsController < ApplicationController
     @taken_medication.save
     redirect_to dashboard_path, notice: "Medication taken"
   end
-
-  # private
-
-  # def taken_medication_params
-  #   params.require(:taken_medication).permit(:taken_date)
-  # end
 end

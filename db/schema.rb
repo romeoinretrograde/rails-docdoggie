@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_125130) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_105937) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,13 +28,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_125130) do
     t.string "name"
     t.integer "dosage"
     t.time "hours"
-    t.boolean "taken"
     t.string "purpose"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "weekdays", default: [], array: true
     t.text "description", default: "Empty description."
     t.index ["user_id"], name: "index_medications_on_user_id"
+  end
+
+  create_table "taken_medications", force: :cascade do |t|
+    t.bigint "medication_id", null: false
+    t.datetime "taken_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["medication_id"], name: "index_taken_medications_on_medication_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +58,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_125130) do
 
   add_foreign_key "doggies", "users"
   add_foreign_key "medications", "users"
+  add_foreign_key "taken_medications", "medications"
 end

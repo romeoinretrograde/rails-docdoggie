@@ -15,12 +15,6 @@
 
   <div class="medication-box-details">
     <h3><strong>Dosage:</strong> <%= @medication.dosage %> </h3>
-    <h3><strong>Taken:</strong>
-      <% if @medication.taken %>
-      <i class="fa-solid fa-square-check"></i>
-      <% else %>
-      <i class="fa-solid fa-square-xmark"></i>
-      <% end %>
     <h3><strong>Purpose:</strong> <%= @medication.purpose %></h3>
       <div class="medication-description">
         <p><strong>Description:</strong></p>

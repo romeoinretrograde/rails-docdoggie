@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get "/calendar", to: "pages#calendar"
 
   resources :doggies, only: %i[new create update]
-  resources :medications, except: %i[edit destroy]
+  resources :medications, except: %i[edit destroy] do
+    resources :taken_medications, only: %i[create]
+  end
+
   delete "/medications/:id", to: "medications#destroy", as: :destroy_medication
   get "medications/:id/edit", to: "medications#edit", as: :edit_medication
 

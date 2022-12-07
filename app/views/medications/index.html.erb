@@ -19,7 +19,9 @@
 
           <%= link_to medication_path(medication), class:"med-div" do %>
               <div class="name-and-dosage">
-                <div><%= medication.name %></div>
+                <div>
+                  <%= medication.name.length > 12 ? "#{medication.name.first(12)}..." : medication.name %>
+                </div>
                 <div><%= "#{medication.dosage}mg" %></div>
               </div>
               <div class="time-and-weekdays">
@@ -62,7 +64,9 @@
       <div class="medication-info">
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
-              <div><%= medication.name %></div>
+              <div>
+                <%= medication.name.length > 12 ? "#{medication.name.first(12)}..." : medication.name %>
+              </div>
               <div><%= "#{medication.dosage}mg" %></div>
             </div>
             <div class="time-and-weekdays">
@@ -103,7 +107,9 @@
       <div class="medication-info">
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
-              <div><%= medication.name %></div>
+              <div>
+                <%= medication.name.length > 12 ? "#{medication.name.first(12)}..." : medication.name %>
+              </div>
               <div><%= "#{medication.dosage}mg" %></div>
             </div>
             <div class="time-and-weekdays">
@@ -144,7 +150,9 @@
       <div class="medication-info">
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
-              <div><%= medication.name %></div>
+              <div>
+                <%= medication.name.length > 12 ? "#{medication.name.first(12)}..." : medication.name %>
+              </div>
               <div><%= "#{medication.dosage}mg" %></div>
             </div>
             <div class="time-and-weekdays">

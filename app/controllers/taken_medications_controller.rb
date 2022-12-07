@@ -1,13 +1,10 @@
 class TakenMedicationsController < ApplicationController
   def create
-    @taken_medication = TakenMedication.new(taken_date: DateTime(
-      Time.now.year.to_i,
-      Time.now.month.to_i,
-      Time.now.day.to_i,
-      Time.now.hour.to_i,
-      Time.now.minute.to_i
-    ))
+    @medication = Medication.find(params[:medication_id])
+    @taken_medication = TakenMedication.new(taken_date: DateTime.now)
+    @taken_medication.medication = @medication
     @taken_medication.save
+    redirect_to dashboard_path, notice: "Medication taken"
   end
 
   # private

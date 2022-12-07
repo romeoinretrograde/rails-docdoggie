@@ -15,7 +15,7 @@ export default class extends Controller {
         });
       }
     };
-    const allButtons = document.querySelectorAll(".swal-buttons");
+    const allButtons = document.querySelectorAll(".swal-buttons-night");
     console.log(allButtons)
     allButtons.forEach((button) => {
       initSweetalert(button.id, {

@@ -3,18 +3,6 @@
   font-size: 30px;
 }
 
-// .btn-signup{
-//   bottom: 44px;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   padding: 8px 24px;
-//   border-radius: 4px;
-//   background-color: #9de5aa;
-//   transition: 0.3s ease;
-//   border: 1px solid #7bd3a1;
-//   display: flex;
-//   justify-content: center;
-// }
 
 input {
   color: white;
@@ -23,7 +11,7 @@ input {
 
   &:active {
     color: white;
-    background-color: #67c679
+    background-color: #67c679;
   }
 
   &:visited {

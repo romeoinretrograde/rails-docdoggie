@@ -11,6 +11,12 @@
 
       <% @all_medications.each do |medication|%>
         <div class="medication-info">
+          <div class="treat-button">
+            <%= link_to medication_taken_medications_path(medication), data: {turbo_method: :post} do %>
+              <i class="fa-solid fa-check" style="color:white"></i>
+            <% end %>
+          </div>
+
           <%= link_to medication_path(medication), class:"med-div" do %>
               <div class="name-and-dosage">
                 <div><%= medication.name %></div>
@@ -44,6 +50,7 @@
             </div>
             <%= link_to "", destroy_medication_path(medication), data: {turbo_method: :delete}, id: "delete-link-#{medication.id}", class: "hidden" %>
           </div>
+
         </div>
       <% end %>
 

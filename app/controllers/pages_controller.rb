@@ -28,7 +28,7 @@ class PagesController < ApplicationController
         @medication_minute = medication.hours.strftime("%M")
         @supposed_taken_time = DateTime.new(Time.now.year, Time.now.month, Time.now.day, @medication_hour.to_i, @medication_minute.to_i)
         @taken_medications = TakenMedication.where(medication: medication)
-        @taken_medications = @taken_medications.find { |taken_medication| taken_medication.taken_date == @supposed_taken_time }
+        @taken_medications = @taken_medications.find { |taken_medication| taken_medication.taken_date >= @supposed_taken_time }
 
         if @taken_medications.nil? && DateTime.now >= @supposed_taken_time
           flash[:alert] = "Take your medication #{medication.name} at #{@supposed_taken_time}"

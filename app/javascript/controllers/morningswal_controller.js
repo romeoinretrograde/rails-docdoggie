@@ -25,7 +25,8 @@ export default class extends Controller {
         buttons: ["cancel", "confirm"],
       }, (value) => {
         if (value) {
-          const link = document.querySelector('#delete-link');
+          const medId = button.dataset.medicationId
+          const link = document.querySelector(`#delete-link-${medId}`);
           link.click();
         }
       });

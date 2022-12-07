@@ -105,6 +105,7 @@
 .float {
   .floating-button {
     display: flex;
+    justify-content: center;
     aspect-ratio: 1 / 1;
     position: fixed;
     bottom: 40px;
@@ -112,7 +113,7 @@
     transform: translateX(-50%);
     background-color: #9DE5AA,;
     padding: 30px;
-    border-radius: 50px;
+    border-radius: 50%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
     i {

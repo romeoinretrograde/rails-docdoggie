@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_07_105937) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_181118) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_105937) do
     t.datetime "taken_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "feed", default: false
     t.index ["medication_id"], name: "index_taken_medications_on_medication_id"
   end
 

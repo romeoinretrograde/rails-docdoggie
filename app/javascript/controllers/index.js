@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AfternoonswalController from "./afternoonswal_controller"
+application.register("afternoonswal", AfternoonswalController)
+
 import CheckboxController from "./checkbox_controller"
 application.register("checkbox", CheckboxController)
 
@@ -18,6 +21,12 @@ application.register("hello", HelloController)
 
 import MedicationsController from "./medications_controller"
 application.register("medications", MedicationsController)
+
+import MorningswalController from "./morningswal_controller"
+application.register("morningswal", MorningswalController)
+
+import NightswalController from "./nightswal_controller"
+application.register("nightswal", NightswalController)
 
 import ProfileController from "./profile_controller"
 application.register("profile", ProfileController)

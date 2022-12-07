@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if user.doggie.nil?
       new_doggy_path(user)
     else
-      dashboard_path(user)
+      dashboard_path
     end
   end
 

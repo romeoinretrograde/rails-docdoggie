@@ -11,7 +11,7 @@
 
       <% @all_medications.each do |medication|%>
         <div class="medication-info">
-          <div class="treat-button">
+          <div class="check-button">
             <%= link_to medication_taken_medications_path(medication), data: {turbo_method: :post} do %>
               <i class="fa-solid fa-check" style="color:white"></i>
             <% end %>

@@ -105,20 +105,25 @@
 .float {
   .floating-button {
     display: flex;
+    align-items: center;
+    position: fixed;
     justify-content: center;
     aspect-ratio: 1 / 1;
-    position: fixed;
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #9DE5AA,;
     padding: 30px;
-    border-radius: 50%;
+    -webkit-border-radius: 100px;
+    text-align: center;
+    -moz-border-radius:12px;
+    border-radius: 50px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
     i {
       color: white;
       font-size: 40px;
+      margin: auto;
     }
   }
 }

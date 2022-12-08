@@ -12,10 +12,8 @@ class TakenMedicationsController < ApplicationController
     # current_user.taken_medications.each do |taken_med|
     #   taken_med.update(feed: true)
     @taken_meds = current_user.taken_medications.where(feed: false)
-    unless @taken_meds.empty?
-      @taken_meds.last.update(feed: true)
-      # Do the animation here
-      redirect_to dashboard_path
-    end
+    @taken_meds.last.update(feed: true) unless @taken_meds.empty?
+    # Do the animation here
+    redirect_to dashboard_path
   end
 end

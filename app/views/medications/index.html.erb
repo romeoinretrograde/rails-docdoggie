@@ -11,7 +11,7 @@
 
       <% @all_medications.each do |medication|%>
         <div class="medication-info">
-          <div class="treat-button">
+          <div class="check-button">
             <%= link_to medication_taken_medications_path(medication), data: {turbo_method: :post} do %>
               <i class="fa-solid fa-check" style="color:white"></i>
             <% end %>
@@ -19,7 +19,9 @@
 
           <%= link_to medication_path(medication), class:"med-div" do %>
               <div class="name-and-dosage">
-                <div><%= medication.name %></div>
+                <div>
+                  <%= medication.name.length > 12 ? "#{medication.name.first(12)}..." : medication.name %>
+                </div>
                 <div><%= "#{medication.dosage}mg" %></div>
               </div>
               <div class="time-and-weekdays">
@@ -60,9 +62,16 @@
 
       <% @morning_medications.each do |medication|%>
       <div class="medication-info">
+        <div class="check-button">
+          <%= link_to medication_taken_medications_path(medication), data: {turbo_method: :post} do %>
+            <i class="fa-solid fa-check" style="color:white"></i>
+          <% end %>
+        </div>
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
-              <div><%= medication.name %></div>
+              <div>
+                <%= medication.name.length > 12 ? "#{medication.name.first(12)}..." : medication.name %>
+              </div>
               <div><%= "#{medication.dosage}mg" %></div>
             </div>
             <div class="time-and-weekdays">
@@ -101,9 +110,16 @@
 
       <% @afternoon_medications.each do |medication|%>
       <div class="medication-info">
+        <div class="check-button">
+          <%= link_to medication_taken_medications_path(medication), data: {turbo_method: :post} do %>
+            <i class="fa-solid fa-check" style="color:white"></i>
+          <% end %>
+        </div>
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
-              <div><%= medication.name %></div>
+              <div>
+                <%= medication.name.length > 12 ? "#{medication.name.first(12)}..." : medication.name %>
+              </div>
               <div><%= "#{medication.dosage}mg" %></div>
             </div>
             <div class="time-and-weekdays">
@@ -142,9 +158,16 @@
 
       <% @night_medications.each do |medication|%>
       <div class="medication-info">
+        <div class="check-button">
+          <%= link_to medication_taken_medications_path(medication), data: {turbo_method: :post} do %>
+            <i class="fa-solid fa-check" style="color:white"></i>
+          <% end %>
+        </div>
         <%= link_to medication_path(medication), class:"med-div" do %>
             <div class="name-and-dosage">
-              <div><%= medication.name %></div>
+              <div>
+                <%= medication.name.length > 12 ? "#{medication.name.first(12)}..." : medication.name %>
+              </div>
               <div><%= "#{medication.dosage}mg" %></div>
             </div>
             <div class="time-and-weekdays">

@@ -1,10 +1,8 @@
 // CSS for the Medications Index
 
 .list-buttons {
-  display: grid;
-  grid-template-columns: 60px 60px 60px 60px;
-  grid-gap: 10px;
-  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
   align-content: center;
 
   .toggle-list {

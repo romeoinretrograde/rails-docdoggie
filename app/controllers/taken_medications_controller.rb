@@ -5,11 +5,15 @@ class TakenMedicationsController < ApplicationController
     @taken_medication.medication = @medication
     @taken_medication.save
     redirect_to dashboard_path, notice: "Medication taken"
+
   end
 
-  # private
-
-  # def taken_medication_params
-  #   params.require(:taken_medication).permit(:taken_date)
-  # end
+  def feed
+    # current_user.taken_medications.each do |taken_med|
+    #   taken_med.update(feed: true)
+    @taken_meds = current_user.taken_medications.where(feed: false)
+    @taken_meds.last.update(feed: true) unless @taken_meds.empty?
+    # Do the animation here
+    redirect_to dashboard_path
+  end
 end

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :taken_medications, only: %i[create]
   end
 
-  patch "taken_medications", to: "taken_medications#feed"
+  post "taken_medications", to: "taken_medications#feed"
   delete "/medications/:id", to: "medications#destroy", as: :destroy_medication
   get "medications/:id/edit", to: "medications#edit", as: :edit_medication
 

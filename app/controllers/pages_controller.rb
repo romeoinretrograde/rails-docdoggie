@@ -31,7 +31,7 @@ class PagesController < ApplicationController
         @taken_medications = @taken_medications.find { |taken_medication| taken_medication.taken_date >= @supposed_taken_time }
 
         if @taken_medications.nil? && DateTime.now >= @supposed_taken_time
-          flash[:alert] = "Take your medication #{medication.name} at #{@supposed_taken_time}"
+          flash[:alert] = "Woof, woof! Remember to take your #{medication.name} today, at #{@supposed_taken_time.strftime("%I:%M %p")}!"
         end
       end
     end

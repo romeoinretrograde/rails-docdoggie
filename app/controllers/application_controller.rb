@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   def user_root_path
     dashboard_url
   end

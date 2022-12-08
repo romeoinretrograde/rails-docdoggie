@@ -33,6 +33,3 @@ application.register("profile", ProfileController)
 
 import SwalController from "./swal_controller"
 application.register("swal", SwalController)
-
-import TakenMedicationsController from "./taken_medications_controller"
-application.register("taken-medications", TakenMedicationsController)

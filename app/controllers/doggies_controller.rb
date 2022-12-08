@@ -1,9 +1,7 @@
 class DoggiesController < ApplicationController
-
   def new
     @doggie = Doggie.new
   end
-
 
   def create
     @doggie = Doggie.new(doggie_params)
@@ -19,7 +17,7 @@ class DoggiesController < ApplicationController
   def update
     @doggie = Doggie.find(params[:id])
     if @doggie.update(doggie_params)
-      redirect_to profile_path
+      redirect_to dashboard_path
     else
       render "pages/profile", status: :unprocessable_entity
     end

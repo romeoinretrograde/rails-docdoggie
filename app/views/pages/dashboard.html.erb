@@ -1,7 +1,14 @@
 <div class="dashboard-container">
   <div class="dashboard-docdoggie">
-    <div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
+    <% if current_user.taken_medications.where(feed: true).present? %>
+      <% doggie_gif = "#{@doggie.image_url[0..-5]}.gif" %>
+      <div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
+      <%= image_tag doggie_gif, class:"docdoggie-pet"%>
+    <% else %>
+      <div class="background-dashboard" style="background-image: url('<%= image_path "backgrounds/park.png" %>')">
       <%= image_tag @doggie.image_url, class:"docdoggie-pet"%>
+    <% end %>
+
       <% if current_user.taken_medications.where(feed: false).present? %>
         <div class="doggie-treat">
           <%= link_to taken_medications_path, data: {turbo_method: :post} do %>

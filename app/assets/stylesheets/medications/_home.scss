@@ -99,6 +99,8 @@
 .float {
   .floating-button {
     display: flex;
+    align-items: center;
+    position: fixed;
     aspect-ratio: 1 / 1;
     position: fixed;
     bottom: 40px;
@@ -106,12 +108,16 @@
     transform: translateX(-50%);
     background-color: #9DE5AA,;
     padding: 30px;
+    -webkit-border-radius: 100px;
+    text-align: center;
+    -moz-border-radius:12px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
     i {
       color: white;
       font-size: 40px;
+      margin: auto;
     }
   }
 }

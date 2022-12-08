@@ -62,16 +62,16 @@ a {
   font-size: 20px;
 }
 
-.doggie-treat {
-  display: flex;
-  position: fixed;
-  top: 33%;
-  left: 13%;
-  transform: translateX(-50%);
-  aspect-ratio: 1 / 1;
-  height: 30px;
-  .treat-image {
-    height: 90px;
-  }
 
-}
+  .doggie-treat {
+    display: flex;
+    position: fixed;
+    top: 305px;
+    left: 5px;
+    aspect-ratio: 1 / 1;
+    height: 30px;
+    .treat-image {
+      height: 90px;
+    }
+
+  }

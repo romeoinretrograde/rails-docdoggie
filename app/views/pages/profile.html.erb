@@ -7,7 +7,10 @@
     <div class="edit-doggie-frame" data-doggies-target="doggieInfo">
       <h2 class="fw-bold text-center"><%= current_user.doggie.petname %></h2>
       <i class="fa-solid fa-pen position-absolute" data-action="click->doggies#edit"></i>
+
     </div>
+          <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn-gradient-edit mt-4" %>
+
 
     <%= simple_form_for current_user.doggie,
                         html: {
@@ -23,6 +26,7 @@
                     class: "doggie-petname-input px-0 text-center"
                   } %>
       <%= f.submit "Save" %>
+
     <% end %>
   </div>
 
@@ -59,9 +63,9 @@
 
       <div class="form-actions">
         <%= f.button :submit, "Update" %>
+
       </div>
     <% end %>
   </div>
 
-  <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn-gradient mt-4" %>
 </div>

@@ -6,21 +6,21 @@
 .btn-login {
   padding: 8px 24px;
   border-radius: 4px;
-  background-color: #9de5aa;
+  background-color: #07a65f;
   transition: 0.3s ease;
-  border: 1px solid #7bd3a1;
+  border: 1px solid #07a65f;
   color: white;
   font-weight: bold;
   font-size: 20px;
 
   &:active {
     color: white !important;
-    background-color: #67c679 !important;
+    background-color: #008247 !important;
   }
 
   &:hover {
     color: white !important;
-    background-color: #67c679 !important;
+    background-color: #008247 !important;
   }
 
   input {

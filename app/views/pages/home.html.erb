@@ -11,23 +11,24 @@
     <div class="carousel-item h-100 position-relative">
       <div class="home-info-2">
         <h1 class="home-info-text">"Huh? What is this?"</h1>
+        <div class="box-frame">
+          <%= image_tag "boxes/closed-box.png", class: "closed-box" %>
+        </div>
       </div>
-      <div class="box-frame">
-        <%= image_tag "boxes/closed-box.png", class: "closed-box" %>
-      </div>
+
     </div>
 
     <div class="carousel-item h-100 position-relative">
       <div class="home-info-3">
         <h2 class="home-info-text">"Schedule your medication reminders with a furry friend!"</h2>
       </div>
+      <div class="doggie-box">
         <div class="btn-home">
         <%= link_to "Meet your friend!", new_user_registration_path %>
         </div>
-      <div>
-      <div class="box-frame">
-        <%= image_tag "boxes/open-box.png", class: "open-box" %>
-      </div>
+        <div class="box-frame">
+          <%= image_tag "boxes/open-box.png", class: "open-box" %>
+        </div>
       </div>
     </div>
   </div>
@@ -40,4 +41,3 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-

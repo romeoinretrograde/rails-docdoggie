@@ -25,6 +25,7 @@
   position: relative;
   width: max-content;
   margin: 0 auto;
+  margin-bottom: 20px;
 
   i {
     top: -5px;
@@ -57,6 +58,22 @@
   border: 1px solid #000000;
   display: flex;
   justify-content: center;
+
+  &:active {
+    background-color: #46ad59;
+    color: white;
+  }
+}
+
+.btn-gradient-edit{
+  transform: translateX(-50%);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: #07a65f;
+  transition: background 0.3s ease;
+  border: 1px solid #000000;
 
   &:active {
     background-color: #46ad59;

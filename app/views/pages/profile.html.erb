@@ -1,6 +1,6 @@
 <div class="profile-page-frame">
   <div data-controller="doggies" class="text-center mb-4">
-    <div class="doggie-image-frame mt-3 mb-2">
+    <div class="doggie-image-frame mt-3 mb-4">
       <%= image_tag current_user.doggie.image_url %>
     </div>
 
@@ -23,7 +23,7 @@
       <%= f.input :petname,
                   label: false,
                   input_html: {
-                    class: "doggie-petname-input px-0 text-center"
+                    class: "doggie-petname-input px-0 text-center mt-4"
                   } %>
       <%= f.submit "Save" %>
 

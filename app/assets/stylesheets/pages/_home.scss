@@ -68,25 +68,33 @@
 }
 
 .closed-box {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   height: 300px;
   animation: fadeIn 3s;
 }
 
 
 .open-box {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   height: 400px;
-  position: fixed;
-  transform: translateX(-50%);
-  bottom: 3px;
+  // position: fixed;
+  // transform: translateX(-50%);
+  // bottom: 3px;
 }
 
 .box-frame {
-  position: absolute;
-  bottom: 44px;
-  left: 50%;
-  transform: translateX(-50%);
+  // position: absolute;
+  // bottom: 44px;
+  // left: 50%;
+  // transform: translateX(-50%);
+  margin-top: 30px;
+}
+
+.doggie-box {
+  display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
 }

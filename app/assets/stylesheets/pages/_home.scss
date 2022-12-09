@@ -79,6 +79,9 @@
   display: flex;
   justify-content: center;
   height: 400px;
+  position: fixed;
+  transform: translateX(-50%);
+  bottom: 3px;
 }
 
 .box-frame {
